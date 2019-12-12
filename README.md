@@ -1,12 +1,12 @@
 # projetsAfpa
 repertory to store all project done while training with AFPA
 
-##Pre-project
-Mockup
-Specifications
-cost estimation
-UML
-Project management
+## Pre-project
+- Mockup
+- Specifications
+- cost estimation
+- UML
+- Project management
 
-##Project
-Html/Css/Bootstrap version
+## Project
+- Html/Css/Bootstrap version
