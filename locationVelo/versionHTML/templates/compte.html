@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="FR-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- tab img -->
+    <link rel="icon" href="../libs/images/logo.webp"/>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+    <!-- link to css -->
+    <link rel="stylesheet" type="text/css" href="../libs/css/style-global.css">
+    <link rel="stylesheet" type="text/css" href="../libs/css/style-compte.css">
+
+    <title>LibertyBikes - Compte</title>
+</head>
+<body>
+<header>
+    <div id="logo">
+        <img src="../libs/images/logo.webp" alt="logo">
+        <h1>LibertyBikes</h1>
+    </div>
+    <!-- logId div only displayed when user is connected ("Pseudo" replaced by real pseudo) -->
+    <div id="logId" class="d-flex">
+        <p class="col-md-12 col-lg-10">Vous êtes connecté en tant que <i>Pseudo</i></p>
+        <p class="col-md-12 col-lg-2 text-right pr-5"><a href="../index.html">Déconnexion</a></p>
+    </div>
+</header>
+
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="../index.html">
+        <div class="d-flex pt-2">
+            <img src="../libs/images/logo.webp" width="30" height="30" alt="logo">
+            <p class="col-sm-8">LibertyBikes</p>
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item px-5">
+                <a class="nav-link" href="../index.html">Accueil</a>
+            </li>
+            <li class="nav-item px-5">
+                <a class="nav-link" href="../templates/location.html">Location</a>
+            </li>
+            <li class="nav-item px-5">
+                <a class="nav-link" href="../templates/contact.html">Contact</a>
+            </li>
+            <li class="nav-item px-5">
+                <a class="nav-link" href="../templates/compte.html">Mon compte</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- part 1 if not logged in (check with session variables in php) -->
+<h2>Connexion</h2>
+
+<div id="connectBtns">
+    <!-- Button trigger modal log in -->
+    <button type="button" class="btn" id="btnModalConnexion" data-toggle="modal" data-target="#modalConnexion">
+        Me connecter
+    </button>
+
+    <!-- Button trigger modal subscribe -->
+    <button type="button" class="btn" id="btnModalInscription" data-toggle="modal" data-target="#modalInscription">
+        M'inscrire
+    </button>
+
+</div>
+
+
+<!-- Modal -->
+<!-- Modal log in -->
+<div class="modal fade" id="modalConnexion" tabindex="-1" role="dialog" aria-labelledby="seConnecter"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="seConnecter">Me connecter</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="contactFormModal">
+                    <form>
+                        <div class="form-group row">
+                            <label for="pseudoConnexion" class="col-sm-4 col-form-label">Pseudo</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="pseudoConnexion"
+                                       placeholder="Entrez votre pseudo">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="mdpConnexion" class="col-sm-4 col-form-label">Mot de passe</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="mdpConnexion"
+                                       placeholder="Entrez votre mot de passe">
+                            </div>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                        </div>
+                        <button type="submit" id="btnConnexion" class="btn">Valider</button>
+                    </form>
+                </div>
+
+                <div id="mdpOublie">
+                    <a href="#">Mot de passe oublié</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal subscribe -->
+<div class="modal fade" id="modalInscription" tabindex="-1" role="dialog" aria-labelledby="sInscrire"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sInscrire">M'inscrire</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="contactFormModal">
+                    <form>
+                        <div class="form-group row">
+                            <label for="nomInscription" class="col-sm-4 col-form-label">Nom</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="nomInscription"
+                                       placeholder="Entrez votre nom">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="prenomInscription" class="col-sm-4 col-form-label">Prénom</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="prenomInscription"
+                                       placeholder="Entrez votre prenom">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="emailInscription" class="col-sm-4 col-form-label">Adresse mail</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" id="emailInscription"
+                                       placeholder="Enter email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="pseudoInscription" class="col-sm-4 col-form-label">Pseudo</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="pseudoInscription"
+                                       placeholder="Entrez votre pseudo">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="mdpInscription" class="col-sm-4 col-form-label">Mot de passe</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="mdpInscription"
+                                       aria-describedby="mdpHelp"
+                                       placeholder="Entrez votre mot de passe">
+                                <small id="mdpHelp" class="form-text text-muted">Votre mot de passe doit comporter 8
+                                    caractères minimum,
+                                    dont une majuscule et un chiffre</small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="mdpInscription2" class="col-sm-4 col-form-label">Confirmer le mot de
+                                passe</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="mdpInscription2"
+                                       placeholder="Confirmez votre mot de passe">
+                            </div>
+                        </div>
+                        <button type="submit" id="btnInscription" class="btn">Valider</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-75 my-5 mx-auto">
+    <h3>Connectez-vous ou créer un compte pour pouvoir réserver.</h3>
+</div>
+
+
+<!-- temporary green background div to comment (while waiting for php session variables) -->
+<div class="bg-success py-3 text-center">
+    <p>
+        En attente des variables de session / si l'utilisateur n'est pas connecté il ne voit que les boutons connexion &
+        inscription -- si l'utilisateur est connecté, il a accès aux parties locations et compte
+    </p>
+</div>
+
+
+<!-- part 2 if logged in (check with session variables in php) -->
+
+<!-- locations display if location exists -->
+<h2>Vos locations</h2>
+
+<p class="text-center my-5">Récap des locations en cours s'il y en a</p>
+
+<hr>
+
+<!-- form to modify informations about the account -->
+
+
+<div id="divComments" class="text-center py-3 font-italic">
+    <p>
+        Commentaires affichés ici après tout envoi du formulaire (messages d'erreurs ou message de succès si les
+        modifications ont été enregistrées avec succès)
+    </p>
+</div>
+
+
+<h2>Informations du compte</h2>
+
+<div class="contactForm">
+    <form>
+        <div class="form-group row">
+            <label for="nomModification" class="col-sm-4 col-form-label">Nom</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="nomModification" placeholder="Entrez votre nom">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="prenomModification" class="col-sm-4 col-form-label">Prénom</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="prenomModification" placeholder="Entrez votre prenom">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="emailModification" class="col-sm-4 col-form-label">Adresse mail</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control" id="emailModification" placeholder="Enter email">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="pseudoModification" class="col-sm-4 col-form-label">Pseudo</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="pseudoModification" placeholder="Entrez votre pseudo">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="mdpCompte" class="col-sm-4 col-form-label">Ancien mot de passe</label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control" id="mdpCompte"
+                       placeholder="Entrez votre mot de passe actuel">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="mdpModification" class="col-sm-4 col-form-label">Mot de passe</label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control" id="mdpModification" aria-describedby="mdpHelp"
+                       placeholder="Entrez votre mot de passe">
+                <small id="mdpHelpCompte" class="form-text text-muted">Votre mot de passe doit comporter 8 caractères
+                    minimum, dont une majuscule et un chiffre</small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="mdpModification2" class="col-sm-4 col-form-label">Confirmation du mot de passe</label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control" id="mdpModification2" placeholder="Confirmez votre mot de passe">
+            </div>
+        </div>
+        <button type="submit" id="btnModification" class="btn">Modifier</button>
+    </form>
+</div>
+
+
+<hr>
+
+<!-- part to delete the account -->
+
+<h2>Supprimer votre compte</h2>
+
+<!-- Button trigger modal to delete account -->
+<div class="text-center pb-5">
+    <button type="button" class="btn" id="btnDeleteModal" data-toggle="modal" data-target="#deleteModal">
+        Supprimer votre compte
+    </button>
+</div>
+
+
+<!-- Modal to delete account -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="modalDelete"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalDelete">Suppression du compte</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Êtes-vous sûr de vouloir supprimer votre compte ?</p>
+                <p>Toute suppression de compte entraînera...</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" id="btnCancel" data-dismiss="modal">Annuler</button>
+                <button type="button" class="btn" id="btnDelete">Supprimer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer">
+    <div class="footerContent">
+        <button type="button" class="btn text-white" data-toggle="modal" data-target="#modalCGV">
+            CGV
+        </button>
+    </div>
+    <div class="footerContent">
+        <button type="button" class="btn text-white" data-toggle="modal" data-target="#modalMentions">
+            Mentions légales
+        </button>
+    </div>
+    <div class="footerFacebook">
+        <a href="http://www.facebook.com" target="_blank"><img src="../libs/images/logoFacebook.png"
+                                                               class="rounded-circle border" alt="facebook"
+                                                               id="imgFacebook"></a>
+    </div>
+</div>
+
+
+<!-- Modal CGV -->
+<div class="modal fade" id="modalCGV" tabindex="-1" role="dialog" aria-labelledby="CGVmodal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="CGVmodal">Conditions générales de vente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>détails des CGV</p>
+
+                <p class="text-justify">
+                    Mauris nec accumsan lacus, nec congue leo. Integer a pretium augue. Curabitur bibendum lacus est,
+                    sit
+                    amet sagittis neque interdum sit amet. Morbi malesuada dapibus placerat. Nam nec placerat nisi.
+                    Donec eu
+                    ligula vel neque cursus semper id id turpis. Integer sapien mauris, venenatis vehicula feugiat in,
+                    laoreet ut elit. Donec justo purus, viverra eget sodales vitae, eleifend sit amet lectus.
+                    Suspendisse at
+                    risus nec quam fermentum dapibus ac sed ipsum.
+                </p>
+
+                <p class="text-justify">
+                    Nullam ultrices ligula venenatis pulvinar posuere. Nunc malesuada tellus vulputate, porttitor quam
+                    vel,
+                    ultricies nisi. Aenean lobortis, lorem et sollicitudin tristique, nisi risus feugiat felis, eget
+                    laoreet
+                    nulla tortor et nisi. Maecenas tempus posuere odio, lacinia tincidunt nisi cursus id. Aliquam
+                    efficitur
+                    augue at urna imperdiet, non sagittis nisl convallis. Praesent non lacus iaculis, feugiat ligula
+                    non,
+                    fringilla nibh. In vehicula mauris turpis, sed hendrerit diam malesuada ut. Aenean laoreet nisi at
+                    metus
+                    tincidunt, id finibus lacus scelerisque. Pellentesque accumsan, mi porta lacinia egestas, ante
+                    tortor
+                    cursus ante, nec cursus justo justo vel risus.
+                </p>
+
+                <p class="text-justify">
+                    Mauris interdum consequat nunc, quis vestibulum elit rhoncus non. Aliquam pharetra, lacus et posuere
+                    lacinia, nisl orci consequat metus, vel mattis risus massa eu mauris. Mauris et diam cursus lorem
+                    malesuada tempor. Quisque luctus congue elit, et tincidunt mi laoreet malesuada. Orci varius natoque
+                    penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras turpis dolor, facilisis sed
+                    metus ultrices, cursus aliquet ex. Etiam commodo, mauris id mattis vestibulum, velit ligula
+                    ullamcorper
+                    enim, nec feugiat elit leo id eros. Maecenas a lorem sed mi tempus aliquet et at est. Pellentesque
+                    dictum ultricies leo. Maecenas laoreet ultricies metus quis dapibus. Nulla ac sem augue. Curabitur
+                    eget
+                    iaculis turpis, vel faucibus nunc. Phasellus non consequat nisl. In non porttitor urna. Vestibulum
+                    ante
+                    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed viverra enim id ante
+                    elementum maximus.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal legal mentions -->
+<div class="modal fade" id="modalMentions" tabindex="-1" role="dialog" aria-labelledby="MLmodal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="MLmodal">Mentions légales</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Détails mentions légales</p>
+
+                <p class="text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam faucibus aliquam molestie. Fusce
+                    fermentum rhoncus congue. Duis vel massa nunc. Etiam sed vestibulum quam, vitae ultricies quam.
+                    Quisque
+                    feugiat magna a erat gravida tincidunt. Sed ullamcorper sapien sed posuere aliquam. Curabitur
+                    posuere
+                    sollicitudin viverra.
+                </p>
+
+                <p class="text-justify">
+                    Integer pretium tortor eu quam ultrices fermentum. Integer bibendum urna at eros hendrerit pretium.
+                    Sed
+                    ac vestibulum felis, sed porttitor dui. Etiam interdum nisi a velit mattis, eu luctus sem fermentum.
+                    Nulla vel luctus orci, id porta lectus. Etiam vulputate felis a placerat volutpat. Duis mattis ante
+                    tortor, ac cursus augue laoreet vitae. Aenean id vehicula tortor, suscipit posuere dolor. Etiam
+                    cursus
+                    felis vitae mauris iaculis tempor. Maecenas elementum sagittis ante, a condimentum augue mattis ac.
+                    Pellentesque eget viverra sem. Ut a facilisis tellus. Integer id lacus finibus, pharetra diam sit
+                    amet,
+                    sodales diam. Integer iaculis, nunc a luctus commodo, turpis diam dapibus dolor, at molestie turpis
+                    nunc
+                    eget lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                    egestas.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

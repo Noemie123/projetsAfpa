@@ -1,0 +1,64 @@
+/* part content */
+
+#locationContent {
+    display: flex;
+    margin: 25px auto;
+    width: 95%;
+}
+
+#locationMap {
+    width: 60%;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+#locationMap iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: none;
+}
+
+#locationTarif {
+    width: 40%;
+    padding: 110px 100px;
+}
+
+/* part form */
+#locationForm {
+    margin: 50px auto;
+    width: 80%;
+}
+
+#btnTotal, #btnCB, #btnPaypal {
+    background-color: #225D82;
+    color: white;
+    padding: 5px;
+}
+
+
+@media all and (max-width: 1080px) {
+    /* part content */
+    #locationContent {
+        flex-direction: column;
+    }
+
+    #locationMap, #locationTarif {
+        width: 100%;
+    }
+
+    #locationTarif {
+        width: 100%;
+        padding: 10px 10px;
+        border-bottom: solid 1px lightgrey;
+    }
+
+    /* part form */
+    #locationForm {
+        width: 95%;
+    }
+}

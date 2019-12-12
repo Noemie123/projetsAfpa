@@ -1,0 +1,36 @@
+.contactForm {
+    width: 50%;
+    margin: 30px auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contactForm #btnContact {
+    background-color: #225D82;
+    font-size: 1.1em;
+    color: white;
+    padding: 15px;
+}
+
+.contactForm input[type="text"], input[type="email"] {
+    height: 55px;
+}
+
+.contactForm textarea {
+    resize: none;
+}
+
+#divComments {
+    width: 60%;
+    margin: auto;
+}
+
+@media all and (max-width: 1080px) {
+    .contactForm {
+        width: 95%;
+    }
+
+    #divComments {
+        width: 95%;
+    }
+}

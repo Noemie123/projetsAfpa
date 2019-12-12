@@ -1,0 +1,85 @@
+/* image as link to product page */
+
+#imgVelo {
+    text-align: center;
+    width: 42%;
+    margin: auto;
+}
+
+#imgVelo a {
+    text-decoration: none;
+}
+
+#imgVelo img {
+    width: 100%;
+}
+
+#imgVelo:hover {
+    border: solid 3px #EBAB00;
+}
+
+#messagePromo {
+    width: 100%;
+    background-color: #CF4343;
+    color: white;
+    font-size: 1.4em;
+}
+
+/* slider */
+.indexSlider {
+    margin: 40px auto;
+}
+
+.indexSlider img {
+    opacity: 0.8;
+}
+
+.slideText {
+    color: #EBAB00;
+    background-color: white;
+}
+
+/* div only displayed on small screen */
+#aboutUsText {
+    display: none;
+}
+
+/* contact div */
+.contactUs {
+    text-align: center;
+    padding: 15px;
+}
+
+.contactUs a {
+    color: #225D82;
+    font-size: 1.4em;
+}
+
+
+
+@media all and (max-width: 1080px) {
+    h3 {
+        margin: 0 15px;
+    }
+
+    #imgVelo {
+        width: 98%;
+        margin: auto;
+    }
+
+    #messagePromo {
+        width: 100%;
+    }
+
+    #aboutUsText {
+        display: inline;
+
+    }
+
+    #aboutUsText p {
+        width: 95%;
+        margin: auto;
+        text-indent: 1.2em;
+        text-align: justify;
+    }
+}

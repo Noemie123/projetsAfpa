@@ -1,0 +1,75 @@
+/* part login / subscribe */
+
+.contactFormModal {
+    width: 90%;
+    margin: 30px auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contactFormModal  input[type="text"], input[type="password"] {
+    height: 55px;
+}
+
+#connectBtns {
+    text-align: center;
+}
+
+#connectBtns button {
+    margin: 20px;
+    padding: 15px 25px;
+    font-size: 1.2em;
+}
+
+#mdpOublie {
+    text-align: center;
+}
+
+#mdpOublie a {
+    text-decoration: none;
+    color: #225D82;
+}
+
+/* buttons for both main parts */
+
+#btnConnexion, #btnInscription, #btnModalConnexion, #btnModalInscription, #btnModification, #btnDeleteModal, #btnDelete {
+    background-color: #225D82;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+}
+
+#btnCancel {
+    background-color: grey;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+}
+
+/* part account */
+
+.contactForm {
+    width: 60%;
+    margin: 30px auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contactForm input[type="text"], input[type="email"],  input[type="password"] {
+    height: 55px;
+}
+
+#divComments {
+    width: 60%;
+    margin: auto;
+}
+
+@media all and (max-width: 1080px) {
+    .contactForm {
+        width: 95%;
+    }
+
+    #divComments {
+        width: 95%;
+    }
+}

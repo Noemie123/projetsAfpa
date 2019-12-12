@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="FR-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- tab img -->
+    <link rel="icon" href="../libs/images/logo.webp"/>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+    <!-- link to css -->
+    <link rel="stylesheet" type="text/css" href="../libs/css/style-global.css">
+    <link rel="stylesheet" type="text/css" href="../libs/css/style-location.css">
+
+    <title>LibertyBikes - Location</title>
+</head>
+<body>
+<header>
+    <div id="logo">
+        <img src="../libs/images/logo.webp" alt="logo">
+        <h1>LibertyBikes</h1>
+    </div>
+    <!-- logId div only displayed when user is connected ("Pseudo" replaced by real pseudo) -->
+    <div id="logId" class="d-flex">
+        <p class="col-md-12 col-lg-10">Vous êtes connecté en tant que <i>Pseudo</i></p>
+        <p class="col-md-12 col-lg-2 text-right pr-5"><a href="../index.html">Déconnexion</a></p>
+    </div>
+</header>
+
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="../index.html">
+        <div class="d-flex pt-2">
+            <img src="../libs/images/logo.webp" width="30" height="30" alt="logo">
+            <p class="col-sm-8">LibertyBikes</p>
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item px-5">
+                <a class="nav-link" href="../index.html">Accueil</a>
+            </li>
+            <li class="nav-item px-5">
+                <a class="nav-link" href="../templates/location.html">Location</a>
+            </li>
+            <li class="nav-item px-5">
+                <a class="nav-link" href="../templates/contact.html">Contact</a>
+            </li>
+            <li class="nav-item px-5">
+                <a class="nav-link" href="../templates/compte.html">Mon compte</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<h2>Location</h2>
+
+<div id="locationContent">
+    <div id="locationMap">
+        <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40492.60173871521!2d3.0121410645371784!3d50.631062252045204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d579b3256e11%3A0x40af13e81646360!2sLille!5e0!3m2!1sfr!2sfr!4v1575564617742!5m2!1sfr!2sfr"
+                    width="600" height="450" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+    </div>
+    <div id="locationTarif">
+        <h2>Tarifs</h2>
+        <h3 class="py-3">Vélo classique</h3>
+        <p class="text-center">1 heure : 0.10€</p>
+        <p class="text-center">1 journée : 1.50€</p>
+        <p class="text-center">1 semaine : 4.50€</p>
+        <p class="text-center pb-2">1 mois : 11.00€</p>
+        <hr>
+        <h3 class="py-3">Vélo électrique</h3>
+        <p class="text-center">1 heure : 0.30€</p>
+        <p class="text-center">1 journée : 3.00€</p>
+        <p class="text-center">1 semaine : 9.00€</p>
+        <p class="text-center">1 mois : 25.00€</p>
+    </div>
+</div>
+
+<h2>Formulaire de location</h2>
+
+<div id="locationForm">
+    <form class="w-50 mx-auto">
+        <div class="form-group row">
+            <label for="selectBorne" class="col-sm-4 col-form-label">Sélectionner la borne</label>
+            <select class="form-control col-sm-8" id="selectBorne">
+                <option value="" disabled selected>Sélectionner une borne</option>
+                <option value="1">Vieux Lille</option>
+                <option value="2">Euralille</option>
+                <option value="3">Moulins</option>
+                <option value="4">Hellemmes</option>
+                <option value="5">Vauban</option>
+            </select>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <input class="form-check-input col-sm-4" type="checkbox" value="" id="veloClassique">
+            <label class="form-check-label col-sm-8" for="veloClassique">Vélo classique</label>
+        </div>
+        <div class="form-group row">
+            <label class="form-check-label col-sm-4" for="nbVeloClassique">Nb Vélo classique</label>
+            <input type="number" class="form-control col-sm-8" id="nbVeloClassique" placeholder="Nb vélo classique">
+        </div>
+        <hr>
+        <div class="form-group row">
+            <input class="form-check-input col-sm-4" type="checkbox" value="" id="veloElectrique">
+            <label class="form-check-label col-sm-8" for="veloElectrique">Vélo électrique</label>
+        </div>
+        <div class="form-group row">
+            <label class="form-check-label col-sm-4" for="nbVeloELectrique">Nb vélo électrique</label>
+            <input type="number" class="form-control col-sm-8" id="nbVeloELectrique" placeholder="Nb vélo électrique">
+        </div>
+
+        <hr>
+        <div class="form-group row">
+            <label for="selectForfait" class="col-sm-4 col-form-label">Sélectionner le forfait</label>
+            <select class="form-control col-sm-8" id="selectForfait">
+                <option value="" disabled selected>Sélectionner le forfait</option>
+                <option value="1">Forfait heure</option>
+                <option value="2">Forfait jour</option>
+                <option value="3">Forfait semaine</option>
+                <option value="4">Forfait mois</option>
+            </select>
+            <label for="NbForfait" class="col-sm-4 col-form-label mt-3">Sélectionner le nombre de forfait</label>
+            <input type="number" class="form-control col-sm-8 mt-3" id="NbForfait" placeholder="Nb forfait">
+        </div>
+    </form>
+    <div class="form-group row text-center">
+        <div class="col-sm-12 pt-4">
+            <button type="submit" id="btnTotal" class="btn">
+                Valider
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- temporary green background div to comment -->
+<div class="bg-success py-1 my-3 text-center">
+    <p>Partie en-dessous visible uniquement quand le formulaire a été validé & vérifié</p>
+</div>
+
+<!-- section if form is sent and validated -->
+
+<section class="text-center border-top py-3" id="sectionValidation">
+
+    <p> Le montant de votre commande est de...</p>
+    <p>Pour modifier les informations, remplissez à nouveau de formulaire et valider.</p>
+
+    <!-- temporary green background div to comment (while waiting for php session variables) -->
+    <div class="bg-success py-1 my-3 text-center">
+        <p>
+            En attente des variables de session / si l'utilisateur n'est pas connecté il ne voit que le lien
+            "connectez-vous" -- si l'utilisateur est connecté il ne voit que la partie paiement
+        </p>
+    </div>
+
+    <!-- part if not logged in (check with session variables in php) -->
+    <div>
+        <p><a href="compte.html">Connectez-vous</a> pour pouvoir réserver !</p>
+    </div>
+
+
+    <!-- part if logged in (check with session variables in php) -->
+    <div class="py-3">
+        <button type="submit" id="btnCB" class="btn py-1 mb-3 px-2 mx-3" data-toggle="modal" data-target="#payingCB">
+            Paiement par carte bancaire
+        </button>
+
+        <button type="submit" id="btnPaypal" class="btn py-1 mb-3 px-2 mx-3" data-toggle="modal"
+                data-target="#payingPaypal">
+            Paiement par Paypal
+        </button>
+    </div>
+
+    <!-- Modal CB -->
+    <div class="modal fade" id="payingCB" tabindex="-1" role="dialog" aria-labelledby="modalCB"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCB">Carte bancaire</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Paiement CB / lien avec banque
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Paiement</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Paypal -->
+    <div class="modal fade" id="payingPaypal" tabindex="-1" role="dialog" aria-labelledby="modalPaypal"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPaypal">Paypal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Paiement Paypal / lien avec paypal
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Paiement</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="footer">
+    <div class="footerContent">
+        <button type="button" class="btn text-white" data-toggle="modal" data-target="#modalCGV">
+            CGV
+        </button>
+    </div>
+    <div class="footerContent">
+        <button type="button" class="btn text-white" data-toggle="modal" data-target="#modalMentions">
+            Mentions légales
+        </button>
+    </div>
+    <div class="footerFacebook">
+        <a href="http://www.facebook.com" target="_blank"><img src="../libs/images/logoFacebook.png"
+                                                               class="rounded-circle border" alt="facebook"
+                                                               id="imgFacebook"></a>
+    </div>
+</div>
+
+
+<!-- Modal CGV -->
+<div class="modal fade" id="modalCGV" tabindex="-1" role="dialog" aria-labelledby="CGVmodal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="CGVmodal">Conditions générales de vente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>détails des CGV</p>
+
+                <p class="text-justify">
+                    Mauris nec accumsan lacus, nec congue leo. Integer a pretium augue. Curabitur bibendum lacus est,
+                    sit
+                    amet sagittis neque interdum sit amet. Morbi malesuada dapibus placerat. Nam nec placerat nisi.
+                    Donec eu
+                    ligula vel neque cursus semper id id turpis. Integer sapien mauris, venenatis vehicula feugiat in,
+                    laoreet ut elit. Donec justo purus, viverra eget sodales vitae, eleifend sit amet lectus.
+                    Suspendisse at
+                    risus nec quam fermentum dapibus ac sed ipsum.
+                </p>
+
+                <p class="text-justify">
+                    Nullam ultrices ligula venenatis pulvinar posuere. Nunc malesuada tellus vulputate, porttitor quam
+                    vel,
+                    ultricies nisi. Aenean lobortis, lorem et sollicitudin tristique, nisi risus feugiat felis, eget
+                    laoreet
+                    nulla tortor et nisi. Maecenas tempus posuere odio, lacinia tincidunt nisi cursus id. Aliquam
+                    efficitur
+                    augue at urna imperdiet, non sagittis nisl convallis. Praesent non lacus iaculis, feugiat ligula
+                    non,
+                    fringilla nibh. In vehicula mauris turpis, sed hendrerit diam malesuada ut. Aenean laoreet nisi at
+                    metus
+                    tincidunt, id finibus lacus scelerisque. Pellentesque accumsan, mi porta lacinia egestas, ante
+                    tortor
+                    cursus ante, nec cursus justo justo vel risus.
+                </p>
+
+                <p class="text-justify">
+                    Mauris interdum consequat nunc, quis vestibulum elit rhoncus non. Aliquam pharetra, lacus et posuere
+                    lacinia, nisl orci consequat metus, vel mattis risus massa eu mauris. Mauris et diam cursus lorem
+                    malesuada tempor. Quisque luctus congue elit, et tincidunt mi laoreet malesuada. Orci varius natoque
+                    penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras turpis dolor, facilisis sed
+                    metus ultrices, cursus aliquet ex. Etiam commodo, mauris id mattis vestibulum, velit ligula
+                    ullamcorper
+                    enim, nec feugiat elit leo id eros. Maecenas a lorem sed mi tempus aliquet et at est. Pellentesque
+                    dictum ultricies leo. Maecenas laoreet ultricies metus quis dapibus. Nulla ac sem augue. Curabitur
+                    eget
+                    iaculis turpis, vel faucibus nunc. Phasellus non consequat nisl. In non porttitor urna. Vestibulum
+                    ante
+                    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed viverra enim id ante
+                    elementum maximus.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal legal mentions -->
+<div class="modal fade" id="modalMentions" tabindex="-1" role="dialog" aria-labelledby="MLmodal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="MLmodal">Mentions légales</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Détails mentions légales</p>
+
+                <p class="text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam faucibus aliquam molestie. Fusce
+                    fermentum rhoncus congue. Duis vel massa nunc. Etiam sed vestibulum quam, vitae ultricies quam.
+                    Quisque
+                    feugiat magna a erat gravida tincidunt. Sed ullamcorper sapien sed posuere aliquam. Curabitur
+                    posuere
+                    sollicitudin viverra.
+                </p>
+
+                <p class="text-justify">
+                    Integer pretium tortor eu quam ultrices fermentum. Integer bibendum urna at eros hendrerit pretium.
+                    Sed
+                    ac vestibulum felis, sed porttitor dui. Etiam interdum nisi a velit mattis, eu luctus sem fermentum.
+                    Nulla vel luctus orci, id porta lectus. Etiam vulputate felis a placerat volutpat. Duis mattis ante
+                    tortor, ac cursus augue laoreet vitae. Aenean id vehicula tortor, suscipit posuere dolor. Etiam
+                    cursus
+                    felis vitae mauris iaculis tempor. Maecenas elementum sagittis ante, a condimentum augue mattis ac.
+                    Pellentesque eget viverra sem. Ut a facilisis tellus. Integer id lacus finibus, pharetra diam sit
+                    amet,
+                    sodales diam. Integer iaculis, nunc a luctus commodo, turpis diam dapibus dolor, at molestie turpis
+                    nunc
+                    eget lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                    egestas.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

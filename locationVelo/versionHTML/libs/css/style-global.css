@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* titles */
+h1 {
+    color: #EBAB00;
+}
+
+h2 {
+    color: #225D82;
+    text-align: center;
+    margin: 40px;
+}
+
+h3 {
+    text-align: center;
+    color: #EBAB00;
+}
+
+/* header */
+header {
+    background-color: white;
+}
+
+#headerSection {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#logo {
+    text-align: center;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Connected member informations */
+#logId {
+    background-color: #EBAB00;
+    text-align: center;
+}
+
+#logId p {
+    padding-top: 15px;
+}
+
+#logId a {
+    text-decoration: none;
+    color: #225D82;
+}
+
+/* menu */
+
+nav {
+    background-color: #225D82;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+nav li {
+    padding-right: 10px;
+
+}
+
+nav a:hover {
+    background-color: white;
+    color: #225D82;
+}
+
+.navbar-brand {
+    background-color: white;
+    color: #EBAB00;
+    padding: 10px;
+}
+
+.navbar-toggler {
+    background-color: white;
+}
+
+/* footer */
+.footer {
+    background-color: #225D82;
+    color: white;
+    text-align: center;
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.footerContent {
+    width: 40%;
+    padding-top: 10px;
+}
+
+.footerContent button {
+    font-size: 0.9em;
+}
+
+.footerFacebook {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.footer #imgFacebook {
+    margin-left: 15px;
+    width: 40px;
+    background-color: white;
+}
+
+
+@media all and (max-width: 990px) {
+    /* header */
+    #logo {
+        flex-direction: column;
+    }
+
+    #logo img {
+        height: 80px;
+    }
+
+    #logId {
+        flex-direction: column;
+    }
+
+    #logId p {
+        text-align: center!important;
+    }
+
+    /* footer */
+    .footer {
+        flex-direction: column;
+        height: 200px;
+    }
+
+    .footerFacebook, .footerContent {
+        width: 100%;
+        padding-bottom: 10px;
+    }
+}
+
