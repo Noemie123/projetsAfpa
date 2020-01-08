@@ -1,0 +1,184 @@
+/*research form stick to page top (but static in responsive)*/
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+@media all and (max-width: 900px) {
+    .sticky {
+        position: static;
+    }
+}
+
+
+/* research form */
+
+#formRecherche form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #B0B0B0;
+    border: solid 1px black;
+    padding: 0 20px;
+    height: 100px;
+    width: 97.8%;
+}
+
+#formRecherche input,
+select {
+    height: 60px;
+    padding-left: 10px;
+    width: 220px;
+    font-size: 0.6em;
+}
+
+#formRecherche input[type="number"] {
+    width: 145px;
+}
+
+#formRecherche input[type="button"] {
+    font-size: 0.9em;
+    background-color: #E8C8E6;
+}
+
+
+/* research form parts */
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+@media all and (max-width: 900px) {
+    #formRecherche form {
+        flex-direction: column;
+        height: fit-content;
+        width: 99%;
+        padding: 0;
+    }
+    .col {
+        width: 100%;
+        margin: 25px 0;
+    }
+    #formRecherche input,
+    select {
+        width: 80%;
+    }
+}
+
+
+/* buttons to choose display (cards or map) */
+
+#selectDisplay {
+    margin: 25px 0;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#buttonsDiv {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#selectDisplay button {
+    width: 25%;
+}
+
+@media all and (max-width: 1080px) {
+    #selectDisplay {
+        flex-direction: column;
+        width: 100%;
+    }
+    #buttonsDiv {
+        width: 100%;
+    }
+    #selectDisplay button {
+        width: 45%;
+    }
+}
+
+
+/* content of main page */
+
+#pageContent {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.rang {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 99.8%;
+    justify-content: space-around;
+}
+
+.rang .card {
+    background-color: #B0B0B0;
+    border-radius: 10px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.rang .card:hover {
+    transform: scale(1.05);
+}
+
+.smallTxt {
+    font-size: 0.8em;
+    margin: 20px;
+}
+
+.smallTxt a {
+    text-decoration: underline;
+    color: brown;
+    cursor: pointer;
+}
+
+.card img {
+    width: 95%;
+    margin: 10px auto;
+}
+
+.card .idCard {
+    display: none;
+}
+
+.card .innerCard {
+    margin-bottom: 25px;
+}
+
+@media all and (max-width: 1080px) {
+    .rang {
+        flex-direction: column;
+    }
+    .rang .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+
+/* pagination */
+
+.pagination {
+    margin: 20px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #E8C8E6;
+    background-color: gray;
+    padding: 10px 20px;
+}

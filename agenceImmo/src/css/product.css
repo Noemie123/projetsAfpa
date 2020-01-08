@@ -1,0 +1,66 @@
+.productContent {
+    display: flex;
+    width: 98%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.topProduct {
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+#sliderDiv {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#sliderDiv img {
+    width: 80%;
+    margin: auto;
+}
+
+#infoImmo {
+    width: 50%;
+}
+
+.innerProd {
+    margin-bottom: 35px;
+}
+
+.petitPlus {
+    color: brown;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+#mapDiv {
+    width: 100%;
+    height: 350px;
+}
+
+#addrDiv {
+    width: 100%;
+    margin: 25px;
+    text-align: center;
+    font-size: 0.7em;
+}
+
+@media all and (max-width: 1080px) {
+    .productContent {
+        flex-direction: column;
+    }
+    .topProduct {
+        flex-direction: column;
+    }
+    #sliderDiv, #infoImmo {
+        width: 96%;
+        padding: 2%;
+    }
+    #sliderDiv img {
+        width: 94%;
+    }
+}

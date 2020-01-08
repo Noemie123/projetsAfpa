@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- link to css -->
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/menu.css">
+    <link rel="stylesheet" href="src/css/homepage.css">
+
+
+    <title>Casa Di Giulietta</title>
+
+</head>
+
+<body>
+
+<section id="menu">
+    <ul>
+        <li id="logoMenu">
+            <a href="index.html"><img src="src/img/logo4.png" alt="logo"></a>
+        </li>
+        <li id="titleMenu">Casa Di Giulietta</li>
+        <li id="vide">&nbsp;</li>
+    </ul>
+</section>
+
+<div>
+    <h1>Casa Di Giulietta, l'excellence à l'italienne !</h1>
+    <p>Trouvons le bien qui vous ressemble !</p>
+</div>
+<div id="formRecherche" class="sticky">
+    <form action="#">
+        <div class="col">
+            <label for="selectType"></label>
+            <select name="selectType" id="selectType">
+                <option value="" selected disabled>Type de bien</option>
+                <option value="1">Maison</option>
+                <option value="2">Appartement</option>
+            </select>
+        </div>
+        <div class="col">
+            <label for="selectAchat"></label>
+            <select name="selectType" id="selectAchat">
+                <option value="" selected disabled>Achat ou Location</option>
+                <option value="1">Achat</option>
+                <option value="2">Location</option>
+            </select>
+        </div>
+        <div class="col">
+            <label for="localisationInput"></label>
+            <input type="text" id="localisationInput" placeholder="Ville, Dpt, Code postal...">
+        </div>
+        <div class="col">
+            <label for="pieceInput"></label>
+            <input type="number" id="pieceInput" placeholder="Nb de pièces">
+        </div>
+        <div class="col">
+            <label for="surfaceInput"></label>
+            <input type="number" id="surfaceInput" placeholder="Surface en m2">
+        </div>
+        <div class="col">
+            <label for="prixInput"></label>
+            <input type="number" id="prixInput" placeholder="Prix max (€)">
+        </div>
+        <div class="col">
+            <input type="button" id="formButton" value="Rechercher">
+        </div>
+    </form>
+</div>
+
+
+<div id="selectDisplay">
+    <h2>Sélectionner l'affichage :</h2>
+    <div id="buttonsDiv">
+        <button id="cardsBtn">Liste</button>
+        <button id="mapBtn">Carte</button>
+    </div>
+</div>
+
+
+<div id="pageContent">
+    <div class="rang">
+
+    </div>
+    <!--
+    <div class="pagination">
+        <a href="#">❮</a>
+        <a href="#">❯</a>
+    </div>
+    -->
+</div>
+
+
+<footer>
+    <ul>
+        <li>
+            <button id="mentionLegales">Mentions légales</button>
+        </li>
+        <li>
+            <a href="view/contact.html">
+                <button>Nous contacter</button>
+            </a>
+        </li>
+        <li>
+            <img src="src/img/logofb.png" alt="Facebook">
+            <img src="src/img/logoinsta.png" alt="Instagram">
+        </li>
+    </ul>
+</footer>
+
+
+<!-- The Modal -->
+<div id="mentionsModal" class="mentionsModal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+
+        <h3>Mentions légales</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus, odio at pretium egestas, ex
+            diam pulvinar augue, in posuere purus ante in odio. Vivamus in erat risus. Maecenas condimentum egestas
+            quam, id imperdiet arcu viverra
+            nec. Praesent tempor consectetur enim et feugiat. Suspendisse quis sem elementum, congue nibh ut, gravida
+            ante. Ut ac blandit urna. Etiam eget augue a lorem ultrices iaculis non tincidunt arcu. Mauris tincidunt
+            varius est at elementum.
+            Nulla vehicula turpis sit amet est euismod pharetra. Praesent ipsum mauris, vestibulum pellentesque velit
+            sed, interdum vestibulum lacus.</p>
+
+        <p>Fusce congue libero id lectus sollicitudin euismod. Integer ut dolor dui. Sed mollis urna ut condimentum
+            egestas. Morbi eget turpis eget mauris tempus lacinia ac et neque. Nulla dignissim quis diam et blandit.
+            Donec vitae imperdiet ante. Vivamus
+            nulla odio, volutpat egestas suscipit non, auctor in elit. Nunc elementum congue dapibus. Maecenas commodo,
+            metus tristique placerat laoreet, justo magna iaculis nulla, eget rhoncus dolor lorem eget risus. Donec
+            gravida nisl sit amet nisl
+            consequat sodales. Aenean accumsan eleifend gravida.</p>
+
+        <p>Quisque mollis felis eget lorem sollicitudin, nec gravida ex dignissim. Sed non magna ac elit sollicitudin
+            facilisis vel cursus sem. Vestibulum consequat lacus sit amet venenatis facilisis. Proin viverra massa eu
+            vehicula mattis. Nunc vestibulum
+            nunc vel sollicitudin viverra. Aliquam sodales consectetur est fringilla ultricies. Integer tempus quis orci
+            congue tincidunt. Etiam at congue leo. Etiam ultricies purus ac mollis sodales. Etiam vehicula et quam eget
+            molestie.</p>
+
+        <span class="close">Fermer</span>
+    </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="src/js/modal.js"></script>
+<script src="src/js/main.js"></script>
+
+
+</div>
+
+</body>
+
+</html>

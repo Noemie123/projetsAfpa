@@ -1,0 +1,118 @@
+/* form display */
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 40px;
+}
+
+.col-30 {
+    width: 15%;
+    justify-content: center;
+}
+
+.col-70 {
+    width: 85%;
+}
+
+#formContact {
+    background-color: #B0B0B0;
+    border: solid 1px black;
+    width: 50%;
+    margin: 50px auto;
+    padding: 25px;
+    text-align: center;
+}
+
+#formContact input {
+    width: 80%;
+    height: 50px;
+}
+
+#formContact input[type="button"] {
+    margin: auto;
+    height: 65px;
+    font-size: 0.9em;
+    background-color: #E8C8E6;
+}
+
+@media all and (max-width: 900px) {
+    #formContact {
+        width: 100%;
+    }
+
+    .row {
+        margin: 10px 0;
+        flex-direction: column;
+    }
+
+    #formContact input,
+    textarea {
+        width: 90%;
+    }
+
+    #formContact input[type="button"] {
+        margin: 0;
+    }
+}
+
+/* part "about us" */
+#imgDiv img {
+    width: 100%;
+}
+
+#aboutUs {
+    margin: 10px 180px 175px 220px;
+    height: fit-content;
+    text-align: justify;
+    text-indent: 1.5em;
+}
+
+#nousTrouver {
+    margin: 40px 10px;
+    border-top: solid 1px grey;
+}
+
+#mapAgence {
+    height: 500px;
+    width: 70%;
+    margin: auto;
+}
+
+#nousTrouver input[type="text"] {
+    width: 700px;
+    height: 35px;
+}
+
+#nousTrouver input[type="button"] {
+    padding: 10px 15px;
+}
+
+@media all and (max-width: 900px) {
+    #imgDiv {
+        display: none;
+    }
+
+    #aboutUs {
+        width: 100%;
+        margin: 0;
+    }
+
+    #aboutUs h3 {
+        text-align: inherit;
+    }
+
+    #aboutUs p {
+        padding: 15px;
+    }
+
+    #mapAgence {
+        width: 95%;
+    }
+
+    #nousTrouver input[type="text"] {
+        width: 95%;
+        margin: auto;
+    }
+}
