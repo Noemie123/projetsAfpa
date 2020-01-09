@@ -2,8 +2,8 @@
 repertory to store all project done while training with AFPA
 
 ## locationVelo LibertyBikes Project
-Partly done in collab with Fyfrel
+JS/Jquery done in collab with Fyfrel
 
 
 ## agenceImmo Casa Di Giuletta Project
-Partly done in collab with Fyfrel
+JS/Jquery (and html templates) done in collab with Fyfrel
