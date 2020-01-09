@@ -1,14 +1,13 @@
 function dataDisplay() {
     let fin = "";
     let storedId = localStorage.getItem("storedId");
-    let monId = storedId - 1;
+    let monId = storedId;
 
-    $.getJSON('../src/js/storage.json', function (data) {
+    $.getJSON('../src/js/storage.json', function(data) {
         let objJson = data.immo[monId];
-        console.log(objJson);
-
         $.ajax({
-            url: 'templateproduct.html', success: (response) => {
+            url: '../templates/templateproduct.html',
+            success: (response) => {
                 response = new DOMParser().parseFromString(response, "text/xml");
                 $(response).find('[data-prod]').each((ind, val) => {
                     $(val).html(objJson[$(val)[0].attributes[0].value]);
@@ -62,20 +61,21 @@ function dataDisplay() {
 
 
                     let directionsService = new google.maps.DirectionsService();
-                    let directionsDisplay = new google.maps.DirectionsRenderer({'map': map});
+                    let directionsDisplay = new google.maps.DirectionsRenderer({ 'map': map });
                     let request = {
                         origin: agence,
                         destination: maison,
                         travelMode: google.maps.DirectionsTravelMode.DRIVING,
                         unitSystem: google.maps.DirectionsUnitSystem.METRIC
                     };
-                    directionsService.route(request, function (response, status) {
+                    directionsService.route(request, function(response, status) {
                         if (status === google.maps.DirectionsStatus.OK) {
                             directionsDisplay.setDirections(response);
                             directionsDisplay.setOptions({
                                 polylineOptions: {
                                     strokeColor: "brown"
-                                }, suppressMarkers: true
+                                },
+                                suppressMarkers: true
                             });
                         }
                     });
@@ -86,39 +86,12 @@ function dataDisplay() {
                 }
 
 
-                $(function () {
+                $(function() {
                     initMapProd();
                 });
             }
-
-
         });
-
-
-        /*
-        let img = `<img src="../src/img/${f.photo}.jpg" alt="maison">`;
-        $("#sliderDiv").html(img);
-        let info = `<h1>${f.nom}</h1><h2>${f.ville}</h2><p>Surface : ${f.surface}</p><p>Nb de pièces : ${f.piece}</p><p>Description</p><p>${f.desc}</p><p>Prix : ${f.prix}</p><p class="petitPlus">Petit plus : ${f.autre}</p>`;
-        $("#infoImmo").html(info);
-        let addr = `<p>${f.adresse}</p>`;
-        $("#addrDiv").html(addr);
-
-         */
-
     })
-
-
-    /*$(".idCard").each(function () {
-        console.log($(this).html())
-    });
-    console.log("bye bye");*/
-
 }
 
 dataDisplay();
-
-
-
-
-
-

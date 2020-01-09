@@ -3,7 +3,7 @@ function initMap(listener) {
         'https://maps.google.com/mapfiles/kml/shapes/';
     var iconBase2 =
         'https://maps.google.com/mapfiles/kml/pushpin/';
-
+    let colorArray = ['brown', 'blue', 'red', 'pink', 'green', 'purple'];
 
     let agence = {
         lat: 50.63222,
@@ -55,7 +55,12 @@ function initMap(listener) {
     directionsService.route(request, function (response, status) {
         if (status === google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
-            directionsDisplay.setOptions({'suppressMarkers': true});
+            directionsDisplay.setOptions({
+                polylineOptions: {
+                    strokeColor: colorArray[Math.floor(Math.random() * colorArray.length)]
+                },
+                suppressMarkers: true
+            });
         }
     });
 

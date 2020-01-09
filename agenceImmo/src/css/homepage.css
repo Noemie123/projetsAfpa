@@ -30,7 +30,7 @@
 select {
     height: 60px;
     padding-left: 10px;
-    width: 220px;
+    width: 180px;
     font-size: 0.6em;
 }
 
@@ -170,7 +170,14 @@ select {
 }
 
 
-/* pagination */
+/* pagination and charge */
+
+#chargerBtn {
+    margin: 15px;
+    padding: 10px 20px;
+    font-size: 0.9em;
+}
+
 
 .pagination {
     margin: 20px;
