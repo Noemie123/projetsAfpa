@@ -32,24 +32,29 @@ let fin = 9;
 // //     })
 // // }
 
+//data.immo = undefined;
+
 function displayIndex(dt) {
     let tempResp;
     let f;
+    dbt = 0;
+
     $.getJSON('src/js/storage.json', function (data) {
         $.ajax({
             url: 'templates/templateindex.html',
             success: (response) => {
                 let tempData = data.immo;
-                if (dt != "oui") {
+                let nbElt = tempData.length;
+                if (displayArray[0] != "null") {
                     dbt = 0;
                     for (let j = 0; j < tempData.length; j++) {
                         if (displayArray[0] != null && tempData[j] != null) {
-                            if (displayArray[0] != tempData[j].type) {
+                            if (displayArray[0] !== tempData[j].type) {
                                 tempData[j] = null;
                             }
                         }
                         if (displayArray[1] != null && tempData[j] != null) {
-                            if (displayArray[1] != tempData[j].achat) {
+                            if (displayArray[1] !== tempData[j].achat) {
                                 tempData[j] = null;
                             }
                         }
@@ -70,7 +75,7 @@ function displayIndex(dt) {
                         }
                     }
 
-                    let nbElt = 0;
+                    nbElt = 0;
                     let indlast;
                     for (let j = 0; j < tempData.length; j++) {
                         if (tempData[j] != null) {
@@ -85,8 +90,16 @@ function displayIndex(dt) {
                     } else {
                         fin = 9;
                     }
+
+
+
+
                     $('.rang').html("");
 
+                }
+
+                if (dt > fin ) {
+                    fin = dt;
                 }
 
                 if (fin > tempData.length) {
@@ -94,9 +107,12 @@ function displayIndex(dt) {
                 }
 
 
+                $('.rang').html("");
 
+                let nbDisplay = 0;
                 for (let i = dbt; i < fin; i++) {
                     if (tempData[i] != null) {
+
                         f = tempData[i];
                         tempResp = response;
                         tempResp = new DOMParser().parseFromString(tempResp, "text/xml");
@@ -109,18 +125,19 @@ function displayIndex(dt) {
 
 
                         $('.rang').append(tempResp[0].outerHTML)
-
+                        nbDisplay++;
                     }
                 }
 
-                /*
-                if (fin == nbElt) {
+
+                if (nbDisplay == nbElt) {
                     $('#chargerBtn').css('display', "none");
                 } else {
                     $('#chargerBtn').css('display', "inline-block");
                 }
 
-                 */
+                console.log(fin);
+
             }
         })
     })
@@ -129,10 +146,9 @@ function displayIndex(dt) {
 displayIndex();
 
 $("#chargerBtn").on('click', () => {
-    dbt += 9;
     fin += 9;
 
-    displayIndex("oui");
+    displayIndex(fin);
 })
 
 
@@ -145,19 +161,19 @@ function storeClicked(elt) {
     $(location).attr('href', 'view/product.html');
 }
 
-let displayArray = [];
+let displayArray = ["null"];
 
 $('#formButton').on('click', () => {
     displayArray = [];
-    let searchArray = [$('#selectType')[0].value, $('#selectAchat')[0].value, $('#pieceInput')[0].value, $('#surfaceInput')[0].value, $('#prixInput')[0].value];
+    let searchArray = [$("#selectType")[0].value, $("#selectAchat")[0].value, $("#pieceInput")[0].value, $("#surfaceInput")[0].value, $("#prixInput")[0].value];
     for (let i = 0; i < searchArray.length; i++) {
-        if (searchArray[i] != "") {
+        if (searchArray[i] !== "") {
             displayArray.push(searchArray[i]);
         } else {
             displayArray.push(null);
         }
-
     }
 
     displayIndex();
 })
+

@@ -49,22 +49,6 @@
       "autre": "Grand jardin, pas de vis à vis"
     },
     {
-      "id": 2,
-      "type": "m",
-      "achat": "Achat",
-      "photo": "maison3",
-      "nom": "Pavillon dans un quartier calme",
-      "adresse": "Avenue de l'Épinette, 59113 Seclin",
-      "ville": "Seclin",
-      "lati": 50.5566152,
-      "long": 3.0582051000000092,
-      "surface": 330,
-      "piece": 5,
-      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Suspendisse vel elit sit amet eros convallis imperdiet a maximus mauris.Vivamus ut dui sed sem lacinia viverra nec ac magna.Morbi ac felis eu lorem scelerisque sodales.",
-      "prix": 120000,
-      "autre": "Grand jardin, pas de vis à vis"
-    },
-    {
       "id": 3,
       "type": "m",
       "achat": "Location",
