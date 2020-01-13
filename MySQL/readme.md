@@ -1,1 +1,1 @@
-# Every files related to MySql
+# Every file related to MySql
