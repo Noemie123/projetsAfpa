@@ -3,7 +3,7 @@ For each file, three pdf documents :
 - conception
 - cardinalities
 - link on workbench
-And the workbench .mwb to see the conception and the link with the cardinalities
++ And the workbench model file .mwb to see the conception and the link with the cardinalities
 
 ## TrainerCenter
 
