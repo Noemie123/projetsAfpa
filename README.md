@@ -1,5 +1,5 @@
 # projetsAfpa
-repertory to store all project done while training with AFPA
+repertory to store every project done while training at AFPA
 
 ## locationVelo LibertyBikes Project
 JS/Jquery done in collab with Fyfrel
